@@ -30,7 +30,8 @@ public class BuscarPalabra {
         catch (IOException e){
             System.out.println(e);
         }
-        System.out.println("El fichero " + datos.getName() + " contiene la palabra " + palabra + " en " + contadorLineas + " líneas." );
+        System.out.println("El fichero " + datos.getName() + " contiene la palabra " + palabra + " en " +
+                "-" + contadorLineas + " líneas." );
 
 
     }
