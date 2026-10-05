@@ -49,6 +49,7 @@ public class Ej7 {
         ){
             for(Persona persona: personas){
                 if(persona.edad<18){
+                    escribirMenores.writeInt(persona.idPersona);
                     escribirMenores.writeUTF(persona.nombre);
                     escribirMenores.writeUTF(persona.apellidos);
                     escribirMenores.writeInt(persona.edad);
@@ -58,7 +59,7 @@ public class Ej7 {
                     escribirMenores.writeUTF(persona.nacionalidad);
                     escribirMenores.writeUTF(persona.profesion);
                 } else if (persona.edad>65) {
-
+                    escribirMayores.writeInt(persona.idPersona);
                     escribirMayores.writeUTF(persona.nombre);
                     escribirMayores.writeUTF(persona.apellidos);
                     escribirMayores.writeInt(persona.edad);
@@ -69,6 +70,7 @@ public class Ej7 {
                     escribirMayores.writeUTF(persona.profesion);
                 }
                 else{
+                    escribirAdultos.writeInt(persona.idPersona);
                     escribirAdultos.writeUTF(persona.nombre);
                     escribirAdultos.writeUTF(persona.apellidos);
                     escribirAdultos.writeInt(persona.edad);
@@ -87,13 +89,15 @@ public class Ej7 {
         try(DataInputStream leerMayores = new DataInputStream(new FileInputStream(mayores))){
             System.out.println("FICHERO MAYORES");
             while(true){
-                System.out.println(leerMayores.readUTF());
-                System.out.println(leerMayores.readUTF());
-                System.out.println(leerMayores.readInt());
-                System.out.println(leerMayores.readUTF());
-                System.out.println(leerMayores.readUTF());
-                System.out.println(leerMayores.readUTF());
-                System.out.println(leerMayores.readUTF());
+                System.out.println("ID: "+leerMayores.readInt());
+                System.out.println("nombre: "+leerMayores.readUTF());
+                System.out.println("apellidos: "+leerMayores.readUTF());
+                System.out.println("Edad: "+leerMayores.readInt());
+                System.out.println("Número de teléfono: "+leerMayores.readUTF());
+                System.out.println("Correo: "+leerMayores.readUTF());
+                System.out.println("Localidad: "+leerMayores.readUTF());
+                System.out.println("Nacionalidad: "+leerMayores.readUTF());
+                System.out.println("Profesión: "+ leerMayores.readUTF());
             }
         }catch (IOException e){
             System.out.println("Fichero mayores leido");
@@ -101,13 +105,15 @@ public class Ej7 {
         try(DataInputStream leerMenores = new DataInputStream(new FileInputStream(menores))){
             System.out.println("FICHERO MENORES");
             while(true){
-                System.out.println(leerMenores.readUTF());
-                System.out.println(leerMenores.readUTF());
-                System.out.println(leerMenores.readInt());
-                System.out.println(leerMenores.readUTF());
-                System.out.println(leerMenores.readUTF());
-                System.out.println(leerMenores.readUTF());
-                System.out.println(leerMenores.readUTF());
+                System.out.println("ID: "+leerMenores.readInt());
+                System.out.println("nombre: "+leerMenores.readUTF());
+                System.out.println("apellidos: "+leerMenores.readUTF());
+                System.out.println("Edad: "+leerMenores.readInt());
+                System.out.println("Número de teléfono: "+leerMenores.readUTF());
+                System.out.println("Correo: "+leerMenores.readUTF());
+                System.out.println("Localidad: "+leerMenores.readUTF());
+                System.out.println("Nacionalidad: "+leerMenores.readUTF());
+                System.out.println("Profesión: "+ leerMenores.readUTF());
             }
         }catch (IOException e){
             System.out.println("Fichero menores leido");
@@ -115,13 +121,15 @@ public class Ej7 {
         try(DataInputStream leerAdultos = new DataInputStream(new FileInputStream(adultos))){
             System.out.println("FICHERO ADULTOS");
             while(true){
-                System.out.println(leerAdultos.readUTF());
-                System.out.println(leerAdultos.readUTF());
-                System.out.println(leerAdultos.readInt());
-                System.out.println(leerAdultos.readUTF());
-                System.out.println(leerAdultos.readUTF());
-                System.out.println(leerAdultos.readUTF());
-                System.out.println(leerAdultos.readUTF());
+                System.out.println("ID: "+leerAdultos.readInt());
+                System.out.println("nombre: "+leerAdultos.readUTF());
+                System.out.println("apellidos: "+leerAdultos.readUTF());
+                System.out.println("Edad: "+leerAdultos.readInt());
+                System.out.println("Número de teléfono: "+leerAdultos.readUTF());
+                System.out.println("Correo: "+leerAdultos.readUTF());
+                System.out.println("Localidad: "+leerAdultos.readUTF());
+                System.out.println("Nacionalidad: "+leerAdultos.readUTF());
+                System.out.println("Profesión: "+ leerAdultos.readUTF());
             }
         }catch (IOException e){
             System.out.println("Fichero adultos leido");
